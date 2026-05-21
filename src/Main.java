@@ -69,5 +69,23 @@ void main() {
     filteredRecommendation.filter(episode);
 
 
+    var MoviePaulo = new Movie();
+    MoviePaulo.setMinutesInDuration(200);
+    MoviePaulo.setName("Dog Ville");
+    MoviePaulo.setRealeaseYear(2003);
+    MoviePaulo.rating(10);
+
+
+    ArrayList <Movie> MoviesLists = new ArrayList<>();
+    MoviesLists.add(MoviePaulo);
+    MoviesLists.add(myMovie);
+    MoviesLists.add(otherMovie);
+    IO.println("Tamanho da lista: " + MoviesLists.size());
+    IO.println("Primeiro Filme: " + MoviesLists.get(0).getName());
+    IO.println(MoviesLists);
+    IO.println("Primeiro Filme: " + MoviesLists.get(0).toString());
+
+
+
 }
 
