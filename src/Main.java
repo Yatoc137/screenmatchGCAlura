@@ -1,4 +1,6 @@
+import br.com.alura.screenmatchGCAlura.Calculations.RecommendationFilter;
 import br.com.alura.screenmatchGCAlura.Calculations.TimeCalculator;
+import br.com.alura.screenmatchGCAlura.Models.Episodes;
 import br.com.alura.screenmatchGCAlura.Models.Movie;
 import br.com.alura.screenmatchGCAlura.Models.Series;
 
@@ -54,5 +56,18 @@ void main() {
     calculator.includes(mySeries);
 
     IO.println("Tempo total para assistir tudo: " + calculator.getTotalTime());
+
+
+    RecommendationFilter filteredRecommendation = new RecommendationFilter();
+    filteredRecommendation.filter(myMovie);
+
+
+    Episodes episode = new Episodes();
+    episode.setNumbers(1);
+    episode.setSerie(mySeries);
+    episode.setTotalViews(300);
+    filteredRecommendation.filter(episode);
+
+
 }
 

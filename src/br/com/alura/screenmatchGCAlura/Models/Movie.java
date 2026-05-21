@@ -1,6 +1,8 @@
 package br.com.alura.screenmatchGCAlura.Models;
 
-public class Movie extends Title {
+import br.com.alura.screenmatchGCAlura.Calculations.Classifiable;
+
+public class Movie extends Title implements Classifiable {
 
     private String director;
 
@@ -10,5 +12,10 @@ public class Movie extends Title {
 
     public void setDirector(String director) {
         this.director = director;
+    }
+
+    @Override
+    public int getClassifiable() {
+        return (int) takeMedia() / 2;
     }
 }
