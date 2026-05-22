@@ -4,6 +4,7 @@ import br.com.alura.screenmatchGCAlura.Models.Series;
 import br.com.alura.screenmatchGCAlura.Models.Title;
 
 
+import javax.swing.event.ListDataEvent;
 import java.util.ArrayList;
 
 void main()
@@ -42,5 +43,22 @@ void main()
             IO.println("Classificacao: " + movie.getClassifiable() );
         }
     }
+
+
+    List <String> searchByArtist = new ArrayList<>();
+
+    searchByArtist.add ("Adam Sandler");
+    searchByArtist.add ("Paulo");
+    searchByArtist.add ("Jaqueline");
+
+    Collections.sort(searchByArtist);
+    IO.println(searchByArtist);
+
+    IO.println("\nLista de titulo ordenados");
+    Collections.sort(watchList);
+    IO.println(watchList);
+    watchList.sort(Comparator.comparing(Title::getRealeaseYear));
+    IO.println("Ordenando por ano");
+    IO.println(watchList);
 
 }
