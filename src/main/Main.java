@@ -9,7 +9,6 @@ void main() {
     // Filme 1
     Movie myMovie = new Movie("O poderoso chefao", 1970);
     myMovie.setMinutesInDuration(180);
-
     myMovie.displaysTechnicalSheet();
 
     myMovie.rating(8);
@@ -65,6 +64,8 @@ void main() {
     filteredRecommendation.filter(episode);
 
 
+
+    //Filme Paulo
     var MoviePaulo = new Movie("Dog Ville", 2003);
     MoviePaulo.setMinutesInDuration(200);
     MoviePaulo.rating(10);
