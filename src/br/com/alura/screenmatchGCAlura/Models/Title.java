@@ -9,6 +9,15 @@ public abstract class Title {
     private int ratingsTotal;
     private int minutesInDuration;
 
+
+    //Construtor
+
+    public Title(String name, int realeaseYear) {
+        this.name = name;
+        this.realeaseYear = realeaseYear;
+    }
+
+
     // Getters
 
     public String getName() {

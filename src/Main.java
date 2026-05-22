@@ -7,9 +7,7 @@ import br.com.alura.screenmatchGCAlura.Models.Series;
 void main() {
 
     // Filme 1
-    Movie myMovie = new Movie();
-    myMovie.setName("O poderoso chefao");
-    myMovie.setRealeaseYear(1970);
+    Movie myMovie = new Movie("O poderoso chefao", 1970);
     myMovie.setMinutesInDuration(180);
 
     myMovie.displaysTechnicalSheet();
@@ -25,9 +23,8 @@ void main() {
     IO.println();
 
     // Série
-    Series mySeries = new Series();
-    mySeries.setName("Lost");
-    mySeries.setRealeaseYear(2000);
+    Series mySeries = new Series("Lost", 2000);
+
     mySeries.setSeasons(10);
     mySeries.setEpisodesPerSeason(10);
     mySeries.setMinutesPerEpisode(50);
@@ -38,9 +35,8 @@ void main() {
     IO.println();
 
     // Filme 2
-    Movie otherMovie = new Movie();
-    otherMovie.setName("Avatar");
-    otherMovie.setRealeaseYear(2023);
+    Movie otherMovie = new Movie("Avatar", 2023);
+
     otherMovie.setMinutesInDuration(200);
 
     otherMovie.displaysTechnicalSheet();
@@ -69,10 +65,8 @@ void main() {
     filteredRecommendation.filter(episode);
 
 
-    var MoviePaulo = new Movie();
+    var MoviePaulo = new Movie("Dog Ville", 2003);
     MoviePaulo.setMinutesInDuration(200);
-    MoviePaulo.setName("Dog Ville");
-    MoviePaulo.setRealeaseYear(2003);
     MoviePaulo.rating(10);
 
 
@@ -80,6 +74,7 @@ void main() {
     MoviesLists.add(MoviePaulo);
     MoviesLists.add(myMovie);
     MoviesLists.add(otherMovie);
+
     IO.println("Tamanho da lista: " + MoviesLists.size());
     IO.println("Primeiro Filme: " + MoviesLists.get(0).getName());
     IO.println(MoviesLists);
