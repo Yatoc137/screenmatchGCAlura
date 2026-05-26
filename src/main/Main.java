@@ -4,6 +4,8 @@ import br.com.alura.screenmatchGCAlura.Models.Episodes;
 import br.com.alura.screenmatchGCAlura.Models.Movie;
 import br.com.alura.screenmatchGCAlura.Models.Series;
 
+import java.util.ArrayList;
+
 void main() {
 
     // Filme 1
@@ -15,11 +17,11 @@ void main() {
     myMovie.rating(5);
     myMovie.rating(10);
 
-    IO.println("Total de avaliacoes: " + myMovie.getRatingsTotal());
-    IO.println();
-    IO.println("A media de avaliacoes do filme e: " + myMovie.takeMedia());
+    System.out.println("Total de avaliacoes: " + myMovie.getRatingsTotal());
 
-    IO.println();
+    System.out.println("A media de avaliacoes do filme e: " + myMovie.takeMedia());
+
+
 
     // Série
     Series mySeries = new Series("Lost", 2000);
@@ -28,10 +30,8 @@ void main() {
     mySeries.setEpisodesPerSeason(10);
     mySeries.setMinutesPerEpisode(50);
 
-    mySeries.displaysTechnicalSheet();
-    IO.println("Duracao para maratonar Lost: " + mySeries.getMinutesInDuration());
+    System.out.println("Duracao para maratonar Lost: " + mySeries.getMinutesInDuration());
 
-    IO.println();
 
     // Filme 2
     Movie otherMovie = new Movie("Avatar", 2023);
@@ -39,9 +39,9 @@ void main() {
     otherMovie.setMinutesInDuration(200);
 
     otherMovie.displaysTechnicalSheet();
-    IO.println("Duracao do filme Avatar: " + otherMovie.getMinutesInDuration());
+    System.out.println("Duracao do filme Avatar: " + otherMovie.getMinutesInDuration());
 
-    IO.println();
+
 
     // Calculadora de tempo
     TimeCalculator calculator = new TimeCalculator();
@@ -50,7 +50,7 @@ void main() {
     calculator.includes(otherMovie);
     calculator.includes(mySeries);
 
-    IO.println("Tempo total para assistir tudo: " + calculator.getTotalTime());
+    System.out.println("Tempo total para assistir tudo: " + calculator.getTotalTime());
 
 
     RecommendationFilter filteredRecommendation = new RecommendationFilter();
@@ -71,15 +71,15 @@ void main() {
     MoviePaulo.rating(10);
 
 
-    ArrayList <Movie> MoviesLists = new ArrayList<>();
+    ArrayList<Movie> MoviesLists = new ArrayList<>();
     MoviesLists.add(MoviePaulo);
     MoviesLists.add(myMovie);
     MoviesLists.add(otherMovie);
 
-    IO.println("Tamanho da lista: " + MoviesLists.size());
-    IO.println("Primeiro Filme: " + MoviesLists.get(0).getName());
-    IO.println(MoviesLists);
-    IO.println("Primeiro Filme: " + MoviesLists.get(0).toString());
+    System.out.println("Tamanho da lista: " + MoviesLists.size());
+    System.out.println("Primeiro Filme: " + MoviesLists.get(0).getName());
+    System.out.println(MoviesLists);
+    System.out.println("Primeiro Filme: " + MoviesLists.get(0).toString());
 
 
 

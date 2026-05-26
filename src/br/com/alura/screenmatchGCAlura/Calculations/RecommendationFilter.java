@@ -8,15 +8,15 @@ public class RecommendationFilter
     {
         if (classifiable.getClassifiable() >= 4 )
         {
-            IO.println("Esta entre os preferidos do momento!");
+            System.out.println("Esta entre os preferidos do momento!");
         }
         else if (classifiable.getClassifiable() >= 2)
         {
-            IO.println("Muito bem avaliado no momento!");
+            System.out.println("Muito bem avaliado no momento!");
         }
         else
         {
-            IO.println("Coloque na sua lista para assistir depois!");
+            System.out.println("Coloque na sua lista para assistir depois!");
         }
     }
 }

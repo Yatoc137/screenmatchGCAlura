@@ -1,26 +1,33 @@
 package br.com.alura.screenmatchGCAlura.Models;
 
-public abstract class Title implements Comparable<Title>
-{
+import com.google.gson.annotations.SerializedName;
 
+public class Title implements Comparable<Title> {
+
+    @SerializedName("Title")
     private String name;
+
+    @SerializedName("Year")
     private int realeaseYear;
+
     private boolean includedPlan;
     private double sumOfTheEvaluations;
     private int ratingsTotal;
     private int minutesInDuration;
 
-
-    //Construtor
-
+    // Construtor
     public Title(String name, int realeaseYear) {
         this.name = name;
         this.realeaseYear = realeaseYear;
     }
 
+    public Title(TitleOmdb myTitleOmdb) {
+        this.name = myTitleOmdb.title();
+        this.realeaseYear = Integer.valueOf(myTitleOmdb.year());
+        this.minutesInDuration = Integer.valueOf(myTitleOmdb.runtime().substring(0,2));
+    }
 
     // Getters
-
     public String getName() {
         return name;
     }
@@ -42,7 +49,6 @@ public abstract class Title implements Comparable<Title>
     }
 
     // Setters
-
     public void setName(String name) {
         this.name = name;
     }
@@ -60,11 +66,11 @@ public abstract class Title implements Comparable<Title>
     }
 
     // Métodos
-
     public void displaysTechnicalSheet() {
-        IO.println("Nome do titulo: " + name);
-        IO.println("Ano de lancamento: " + realeaseYear);
-        IO.println("O tempo de duracao e de: " + getMinutesInDuration());
+
+        System.out.println("Nome do titulo: " + name);
+        System.out.println("Ano de lancamento: " + realeaseYear);
+        System.out.println("O tempo de duracao e de: " + getMinutesInDuration());
     }
 
     public void rating(double grade) {
@@ -72,11 +78,19 @@ public abstract class Title implements Comparable<Title>
         ratingsTotal++;
     }
 
-    public double takeMedia() {return sumOfTheEvaluations / ratingsTotal;}
+    public double takeMedia() {
+        return sumOfTheEvaluations / ratingsTotal;
+    }
 
     @Override
-    public int compareTo (Title otherTitle )
-    {
+    public int compareTo(Title otherTitle) {
         return this.getName().compareTo(otherTitle.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "name: '" + name + '\'' +
+                ", realeaseYear: " + realeaseYear + "," +
+                "duracao: " + minutesInDuration;
     }
 }

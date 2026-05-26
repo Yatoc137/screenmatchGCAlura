@@ -6,6 +6,9 @@ import br.com.alura.screenmatchGCAlura.Models.Title;
 
 import javax.swing.event.ListDataEvent;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 void main()
 {
@@ -37,28 +40,28 @@ void main()
 
     for(Title item: watchList)
     {
-        IO.println(item.getName());
+        System.out.println(item.getName());
         if (item instanceof Movie movie && movie.getClassifiable() > 2)
         {
-            IO.println("Classificacao: " + movie.getClassifiable() );
+            System.out.println("Classificacao: " + movie.getClassifiable());
         }
     }
 
 
-    List <String> searchByArtist = new ArrayList<>();
+    List<String> searchByArtist = new ArrayList<>();
 
     searchByArtist.add ("Adam Sandler");
     searchByArtist.add ("Paulo");
     searchByArtist.add ("Jaqueline");
 
     Collections.sort(searchByArtist);
-    IO.println(searchByArtist);
+    System.out.println(searchByArtist);
 
-    IO.println("\nLista de titulo ordenados");
+    System.out.println("\nLista de titulo ordenados");
     Collections.sort(watchList);
-    IO.println(watchList);
+    System.out.println(watchList);
     watchList.sort(Comparator.comparing(Title::getRealeaseYear));
-    IO.println("Ordenando por ano");
-    IO.println(watchList);
+    System.out.println("Ordenando por ano");
+    System.out.println(watchList);
 
 }
